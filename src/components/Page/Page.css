@@ -1,0 +1,27 @@
+div.Polaris-Page--fullWidth {
+  max-width: 795px;
+}
+
+div.Polaris-ResourceItem__Container {
+  height: 66px;
+}
+div.Polaris-ResourceItem__Content {
+  display: inline-flex;
+}
+div.Polaris-ResourceItem__Content {
+  max-width: 400px;
+}
+div.Polaris-ResourceItem__Content .btn-group {
+  position: absolute;
+  right: 13px;
+  bottom: 22px;
+  top: 14px;
+}
+div.Polaris-TextField {
+  width: 580px;
+  height: 50px;
+  font-size: 24px;
+}
+dev.Polaris-Modal__BodyWrapper {
+  text-align: center;
+}
