@@ -16,7 +16,7 @@ function useFetchData({ url }) {
       } catch (error) {
         console.log(error);
       } finally {
-        setLoading(false);
+        // setLoading(false);
       }
     }
     fetchData();

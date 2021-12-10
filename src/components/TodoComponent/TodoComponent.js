@@ -10,7 +10,7 @@ function TodoComponent(item, completeTodo, removeTodo) {
   const { id, text, isCompleted } = item;
 
   return (
-    <ResourceItem id={parseInt(id)}>
+    <ResourceItem id={id}>
       <h3 style={{ textDecoration: isCompleted ? "line-through" : "" }}>
         <TextStyle variation="strong">{text}</TextStyle>
       </h3>

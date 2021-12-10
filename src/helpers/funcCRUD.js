@@ -31,6 +31,5 @@ export async function updateTodoFunc(ids, data) {
     option
   );
   const todoData = await resp.json();
-  console.log(todoData.data);
   return todoData.data;
 }

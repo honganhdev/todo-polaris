@@ -9,9 +9,8 @@ import {
   Badge,
 } from "@shopify/polaris";
 
-function TodoList({ items, loading, completeTodo, removeTodo }) {
+function TodoList({ items, loading, completeTodo, removeTodo, setLoading }) {
   const [selectedItems, setSelectedItems] = useState([]);
-
   const handleDelete = () => {
     removeTodo(selectedItems);
     setSelectedItems([]);
@@ -36,7 +35,6 @@ function TodoList({ items, loading, completeTodo, removeTodo }) {
     singular: "todo",
     plural: "todos",
   };
-
   return (
     <Card>
       <ResourceList
@@ -49,7 +47,7 @@ function TodoList({ items, loading, completeTodo, removeTodo }) {
         }}
         loading={loading}
         promotedBulkActions={promotedBulkActions}
-        selectable={true}
+        selectable
       />
     </Card>
   );
@@ -60,7 +58,7 @@ function TodoList({ items, loading, completeTodo, removeTodo }) {
     let ids = [id];
 
     return (
-      <ResourceItem id={parseInt(id)}>
+      <ResourceItem id={id}>
         <h3 style={{ textDecoration: isCompleted ? "line-through" : "" }}>
           <TextStyle variation="strong">{text}</TextStyle>
         </h3>

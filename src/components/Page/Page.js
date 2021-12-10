@@ -28,14 +28,13 @@ function PageTodo() {
   };
 
   const completeTodo = async (ids) => {
-    setLoading(true);
     let newItems = items;
     const updatedTodo = await updateTodoFunc(ids, {
       isCompleted: true,
     });
     updatedTodo.map(async (item) => {
       newItems = newItems.map((todoItem) => {
-        if (item.id === todoItem.id) return item;
+        if (item.id === todoItem.id) return { ...todoItem, ...item };
         return todoItem;
       });
     });
@@ -49,9 +48,8 @@ function PageTodo() {
     console.log(ids);
     ids.map((id) => {
       const item = items.find((item) => {
-        if (item.id === parseInt(id)) return item;
+        if (item.id === id) return item;
       });
-      id = parseInt(id);
 
       items.splice(items.indexOf(item), 1);
     });
@@ -73,6 +71,7 @@ function PageTodo() {
         loading={loading}
         completeTodo={completeTodo}
         removeTodo={removeTodo}
+        setLoading={setLoading}
       />
       {active ? (
         <ModalAddTodo
