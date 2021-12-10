@@ -28,6 +28,7 @@ function PageTodo() {
   };
 
   const completeTodo = async (ids) => {
+    setLoading(true);
     let newItems = items;
     const updatedTodo = await updateTodoFunc(ids, {
       isCompleted: true,
